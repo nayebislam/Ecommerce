@@ -55,7 +55,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="w-[243px] relative mr-6">
               <input
-                className="w-full py-[7px] pl-5 pr-9 bg-primary outline-0 rounded placeholder:font-primary placeholder:text-[12px] placeholder:leading-[18px] placeholder:text-black"
+                className="w-full py-[7px] pl-5 pr-9 bg-secondary outline-0 rounded placeholder:font-primary placeholder:text-[12px] placeholder:leading-[18px] placeholder:text-black"
                 type="text"
                 placeholder="What are you looking for?"
               />
