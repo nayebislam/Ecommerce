@@ -31,7 +31,7 @@ const BannerLeft = () => {
     },
   ];
   return (
-    <section className="w-[20%] relative after:absolute after:content-[''] after:w-[1px] after:h-[384px] after:bg-[#D9D9D9] after:top-[-40px] after:right-0">
+    <section className="w-[20%] relative after:absolute after:content-[''] after:w-[1px] after:h-[385px] after:bg-[#D9D9D9] after:top-[-43px] after:right-0">
       {CategorisData.map((item) => (
         <p className="font-primary text-base leading-[24px] text-black mb-4">
           {item.name}
