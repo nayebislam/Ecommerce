@@ -17,6 +17,12 @@ const Products = () => {
               View All
             </button>
           </div>
+
+          <div>
+            <button>nothing
+              
+            </button>
+          </div>
         </div>
       </Containar>
     </section>
