@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar/Navbar'
 import Banner from '../components/Banner/Banner'
 import Categories from '../components/Categories/Categories'
 import Products from '../components/Products/Products'
+import Offer from '../components/Offer/Offer'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <Banner />
         <Categories />
         <Products />
+        <Offer />
     </>
   )
 }
