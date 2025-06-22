@@ -17,7 +17,7 @@ const Offer = () => {
           <div>
             <Countdown date={Date.now() + 432000000} renderer={RenderedTime} />
           </div>
-          <button className="py-4 px-12 bg-[#00FF66] text-white rounded font-primary text-[16px] leading-6 font-medium mt-[40px]">
+          <button className="py-4 px-12 bg-[#00FF66] text-white rounded font-primary text-[16px] leading-6 font-medium mt-[40px] cursor-pointer">
             Buy Now!
           </button>
         </div>

@@ -17,27 +17,27 @@ const Products = () => {
       name: "The north coat",
       price: "$260",
       prevprice: "$360",
-      review: "(65)",
+      amount: "(65)",
     },
     {
       img: pestproduct2,
       name: "Gucci duffle bag",
       price: "$960",
       prevprice: "$1160",
-      review: "(65)",
+      amount: "(65)",
     },
     {
       img: pestproduct3,
       name: "RGB liquid CPU Cooler",
       price: "$160",
       prevprice: "$170",
-      review: "(65)",
+      amount: "(65)",
     },
     {
       img: pestproduct4,
       name: "Small BookSelf",
       price: "$360",
-      review: "(65)",
+      amount: "(65)",
     },
   ];
   return (
@@ -89,7 +89,7 @@ const Products = () => {
                   <TiStarFullOutline size={20} color="#FFAD33" />
                   <TiStarFullOutline size={20} color="#FFAD33" />
                   <p className="ml-2 font-primary font-semibold text-[14px] leading-[21px] text-[#979797]">
-                    {product.review}
+                    {product.amount}
                   </p>
                 </div>
               </div>
