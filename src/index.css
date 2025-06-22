@@ -9,3 +9,28 @@
     --color-secondary: #F5F5F5;
     --color-products: #F5F5F5;
 }
+
+.slick-dots {
+    bottom: 10px !important;
+}
+
+.slick-dots li button {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50%;
+    background: #7F7F7F !important;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 100% !important;
+    height: 12px !important;
+    width: 12px !important;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: #DB4444 !important;
+    color: transparent !important;
+}
+
+.slick-dots li button:before {
+    color: transparent !important;
+}
