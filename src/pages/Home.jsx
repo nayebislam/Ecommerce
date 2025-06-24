@@ -8,6 +8,7 @@ import Offer from '../components/Offer/Offer'
 import OurProducts from '../components/OurProducts/OurProducts'
 import NewArrival from '../components/NewArrival/NewArrival'
 import Delivery from '../components/Delivery/Delivery'
+import Footer from '../components/Footer/Footer'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
         <OurProducts />
         <NewArrival />
         <Delivery />
+        <Footer />
     </>
   )
 }
