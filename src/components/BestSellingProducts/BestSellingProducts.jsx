@@ -10,7 +10,7 @@ import pestproduct2 from "../../assets/Best-Product2.png";
 import pestproduct3 from "../../assets/Best-Product3.png";
 import pestproduct4 from "../../assets/Best-Product4.png";
 
-const Products = () => {
+const BestSellingProducts = () => {
   const ProductsData = [
     {
       img: pestproduct1,
@@ -101,4 +101,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default BestSellingProducts;

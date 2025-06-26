@@ -5,6 +5,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { FaOpencart } from "react-icons/fa";
 import { GoPerson } from "react-icons/go";
 import Containar from "../../layout/Containar";
+import { Link } from "react-router";
 
 const Navbar = () => {
   return (
@@ -19,36 +20,39 @@ const Navbar = () => {
           <div>
             <ul className="flex gap-x-[48px] items-center">
               <li>
-                <a
+                <Link to="/"
                   className="font-primary text-base leading-[24px] text-black"
-                  href="#"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link to="/Products"
                   className="font-primary text-base leading-[24px] text-black"
-                  href="#"
+                >
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link to=""
+                  className="font-primary text-base leading-[24px] text-black"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link to=""
                   className="font-primary text-base leading-[24px] text-black"
-                  href="#"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link to=""
                   className="font-primary text-base leading-[24px] text-black"
-                  href="#"
                 >
                   Sign Up
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
