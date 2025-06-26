@@ -8,7 +8,7 @@ const Products = () => {
   return (
     <section>
         <Containar>
-            <div className='flex'>
+            <div className='flex justify-between'>
                 <ProductsLeftPart />
                 <ProductsRightPart />
             </div>
