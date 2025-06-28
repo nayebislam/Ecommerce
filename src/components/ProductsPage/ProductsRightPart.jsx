@@ -43,8 +43,7 @@ const ProductsRightPart = () => {
         {productData.map((product) => (
           <div className="relative w-[270px]">
             <div className="absolute top-3 right-3 z-10">
-              <div 
-                className="h-[34px] w-[34px] rounded-full bg-white flex justify-center items-center cursor-pointer">
+              <div className="h-[34px] w-[34px] rounded-full bg-white flex justify-center items-center cursor-pointer">
                 <FaRegHeart size={16} color="black" />
               </div>
               <div
@@ -80,11 +79,11 @@ const ProductsRightPart = () => {
                     {product.amount}
                   </p>
                 </div> */}
-                <div  className="flex items-center mt-2">
-                    <ProductRating rating={product.rating} />
-                    <p className="ml-2 font-primary font-semibold text-[14px] leading-[21px] text-[#979797]">
-                      {product.stock}
-                    </p>
+                <div className="flex items-center mt-2">
+                  <ProductRating rating={product.rating} />
+                  <p className="ml-2 font-primary font-semibold text-[14px] leading-[21px] text-[#979797]">
+                    {product.stock}
+                  </p>
                 </div>
               </div>
             </div>

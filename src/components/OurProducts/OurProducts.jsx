@@ -172,8 +172,7 @@ const OurProducts = () => {
           {ProductsData.slice(0, visible).map((product) => (
             <div className="relative w-[270px]">
               <div className="absolute top-3 right-3 z-10">
-                <div
-                  className="h-[34px] w-[34px] rounded-full bg-white flex justify-center items-center cursor-pointer">
+                <div className="h-[34px] w-[34px] rounded-full bg-white flex justify-center items-center cursor-pointer">
                   <FaRegHeart size={16} color="black" />
                 </div>
                 <div
