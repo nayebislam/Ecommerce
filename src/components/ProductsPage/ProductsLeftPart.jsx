@@ -45,19 +45,27 @@ const ProductsLeftPart = () => {
           </p>
         ))}
       </div>
-      <h3 className="font-primary font-bold text-[20px] mt-[40px] mb-[15px]">Shop by Color</h3>
+      <h3 className="font-primary font-bold text-[20px] mt-[40px] mb-[15px]">
+        Shop by Color
+      </h3>
       <div>
         <div className="flex items-center gap-x-[10px]">
-            <div className="w-[11px] h-[11px] rounded-full bg-black"></div>
-            <span className="font-primary text-[16px] leading-[30px] text-[#767676]">Color 1</span>
+          <div className="w-[11px] h-[11px] rounded-full bg-black"></div>
+          <span className="font-primary text-[16px] leading-[30px] text-[#767676]">
+            Color 1
+          </span>
         </div>
         <div className="flex items-center gap-x-[10px] my-[18px]">
-            <div className="w-[11px] h-[11px] rounded-full bg-[#FF0000]"></div>
-            <span className="font-primary text-[16px] leading-[30px] text-[#767676]">Color 2</span>
+          <div className="w-[11px] h-[11px] rounded-full bg-[#FF0000]"></div>
+          <span className="font-primary text-[16px] leading-[30px] text-[#767676]">
+            Color 2
+          </span>
         </div>
         <div className="flex items-center gap-x-[10px]">
-            <div className="w-[11px] h-[11px] rounded-full bg-[#00FF38]"></div>
-            <span className="font-primary text-[16px] leading-[30px] text-[#767676]">Color 3</span>
+          <div className="w-[11px] h-[11px] rounded-full bg-[#00FF38]"></div>
+          <span className="font-primary text-[16px] leading-[30px] text-[#767676]">
+            Color 3
+          </span>
         </div>
       </div>
     </div>

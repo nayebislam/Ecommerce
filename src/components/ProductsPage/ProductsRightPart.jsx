@@ -3,6 +3,7 @@ import { TiStarFullOutline } from "react-icons/ti";
 import { FaRegHeart } from "react-icons/fa6";
 import { FiEye } from "react-icons/fi";
 import ProductRating from "./ProductRating";
+import { Link } from "react-router";
 
 const ProductsRightPart = () => {
   const [productData, setProductData] = useState([]);
@@ -50,9 +51,13 @@ const ProductsRightPart = () => {
   //   ];
   return (
     <div className="w-[80%]">
-      <div className="flex flex-wrap gap-x-[30px] gap-y-[40px] justify-end mt-[210px]">
+      <div className="flex items-center mt-[172px] gap-x-3 justify-end">
+        <p className="font-primary text-[16px] leading-6 text-black">Show :</p>
+        <p className="py-[2px] px-[42px] border border-[#D9D9D9] rounded">{currentProduct.length}</p>
+      </div>
+      <div className="flex flex-wrap gap-x-[30px] gap-y-[40px] justify-end mt-[30px]">
         {currentProduct.map((product) => (
-          <div className="relative w-[270px]">
+          <Link to={`/product/${product.id}`} className="relative w-[270px]">
             <div className="absolute top-3 right-3 z-10">
               <div className="h-[34px] w-[34px] rounded-full bg-white flex justify-center items-center cursor-pointer">
                 <FaRegHeart size={16} color="black" />
@@ -93,20 +98,24 @@ const ProductsRightPart = () => {
                 <div className="flex items-center mt-2">
                   <ProductRating rating={product.rating} />
                   <p className="ml-2 font-primary font-semibold text-[14px] leading-[21px] text-[#979797]">
-                    {product.stock}
+                    {`(${product.stock})`}
                   </p>
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="flex gap-x-2.5 pt-[40px] pb-[104px] ml-16.5">
         {data.map((item) => (
           <div
-           className={`font-primary text-[16px] leading-6 px-[25px] py-[2px] cursor-pointer ${currentPage === item ? "bg-primary text-white" : "text-white bg-black"}`}
-           onClick={() => setCurrentPage(item)}
-           >
+            className={`font-primary text-[16px] leading-6 px-[25px] py-[2px] cursor-pointer ${
+              currentPage === item
+                ? "bg-black text-white"
+                : "text-black bg-gray-200"
+            }`}
+            onClick={() => setCurrentPage(item)}
+          >
             {item}
           </div>
         ))}
