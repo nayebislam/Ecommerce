@@ -6,11 +6,22 @@ import ProductRating from "./ProductRating";
 
 const ProductsRightPart = () => {
   const [productData, setProductData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const productPerPage = 9;
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
       .then((data) => setProductData(data.products));
   }, []);
+  const totalProducts = productData.length;
+  const totalPages = Math.ceil(totalProducts / productPerPage);
+  const indexOfLastProduct = currentPage * productPerPage;
+  const indexOfFristProduct = indexOfLastProduct - productPerPage;
+  const currentProduct = productData.slice(
+    indexOfFristProduct,
+    indexOfLastProduct
+  );
+  const data = [...Array(totalPages).keys()].map((page) => page + 1);
   //   const ProductsData = [
   //     {
   //       img: ourproduct1,
@@ -40,7 +51,7 @@ const ProductsRightPart = () => {
   return (
     <div className="w-[80%]">
       <div className="flex flex-wrap gap-x-[30px] gap-y-[40px] justify-end mt-[210px]">
-        {productData.map((product) => (
+        {currentProduct.map((product) => (
           <div className="relative w-[270px]">
             <div className="absolute top-3 right-3 z-10">
               <div className="h-[34px] w-[34px] rounded-full bg-white flex justify-center items-center cursor-pointer">
@@ -87,6 +98,16 @@ const ProductsRightPart = () => {
                 </div>
               </div>
             </div>
+          </div>
+        ))}
+      </div>
+      <div className="flex gap-x-2.5 pt-[40px] pb-[104px] ml-16.5">
+        {data.map((item) => (
+          <div
+           className={`font-primary text-[16px] leading-6 px-[25px] py-[2px] cursor-pointer ${currentPage === item ? "bg-primary text-white" : "text-white bg-black"}`}
+           onClick={() => setCurrentPage(item)}
+           >
+            {item}
           </div>
         ))}
       </div>

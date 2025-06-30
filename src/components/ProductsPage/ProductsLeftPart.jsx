@@ -31,7 +31,7 @@ const ProductsLeftPart = () => {
     },
   ];
   return (
-    <div className="w-[20%]">
+    <div className="w-[20%] pb-8">
       <p className="font-primary text-[14px] leading-[21px] text-[#808080] pt-[80px] pb-[50px]">
         home / shop
       </p>
