@@ -20,35 +20,40 @@ const Navbar = () => {
           <div>
             <ul className="flex gap-x-[48px] items-center">
               <li>
-                <Link to="/"
+                <Link
+                  to="/"
                   className="font-primary text-base leading-[24px] text-black"
                 >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/Products"
+                <Link
+                  to="/Products"
                   className="font-primary text-base leading-[24px] text-black"
                 >
                   Products
                 </Link>
               </li>
               <li>
-                <Link to=""
+                <Link
+                  to=""
                   className="font-primary text-base leading-[24px] text-black"
                 >
                   Contact
                 </Link>
               </li>
               <li>
-                <Link to=""
+                <Link
+                  to=""
                   className="font-primary text-base leading-[24px] text-black"
                 >
                   About
                 </Link>
               </li>
               <li>
-                <Link to=""
+                <Link
+                  to=""
                   className="font-primary text-base leading-[24px] text-black"
                 >
                   Sign Up
@@ -70,7 +75,9 @@ const Navbar = () => {
             </div>
             <div className="flex items-center gap-x-4">
               <IoMdHeartEmpty size={24} className="cursor-pointer" />
-              <FaOpencart size={24} className="cursor-pointer" />
+              <Link to="/cart">
+                <FaOpencart size={24} className="cursor-pointer" />
+              </Link>
               <GoPerson size={24} className="cursor-pointer" />
             </div>
           </div>

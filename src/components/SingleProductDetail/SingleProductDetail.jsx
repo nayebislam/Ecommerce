@@ -171,9 +171,11 @@ const SingleProductDetail = () => {
               </div>
             </div>
             <div className="ml-4 mr-[19px]">
-              <button className="py-2.5 px-12 bg-primary text-white font-primary font-medium text-[16px] leading-6 rounded">
-                Buy Now
-              </button>
+              <Link to="/cart">
+                <button className="py-2.5 px-12 bg-primary text-white font-primary font-medium text-[16px] cursor-pointer leading-6 rounded">
+                  Buy Now
+                </button>
+              </Link>
             </div>
             <div className="py-[11px] px-[10px] border border-[#00000080] rounded ">
               <IoMdHeartEmpty size={20} className="cursor-pointer" />

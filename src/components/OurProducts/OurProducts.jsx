@@ -9,6 +9,7 @@ import ourproduct1 from "../../assets/Our-Product1.png";
 import ourproduct2 from "../../assets/Our-Product2.png";
 import ourproduct3 from "../../assets/Our-Product3.png";
 import ourproduct4 from "../../assets/Our-Product4.png";
+import {Link} from "react-router";
 
 const OurProducts = () => {
   const [visible, setVisible] = useState(8);
@@ -185,9 +186,11 @@ const OurProducts = () => {
               <div className="relative group ease-in-out duration-200 bg-products rounded flex justify-center items-center h-[250px]">
                 <img src={product.img} alt="" />
                 <div className="absolute left-0 bottom-0 w-full opacity-0 group-hover:opacity-[100%] ease-in-out duration-200">
-                  <button className="w-full font-primary font-medium text-[16px] leading-6 text-white bg-black py-2 rounded-b cursor-pointer">
-                    Add To Cart
-                  </button>
+                  <Link to="/cart">
+                    <button className="w-full font-primary font-medium text-[16px] leading-6 text-white bg-black py-2 rounded-b cursor-pointer">
+                      Add To Cart
+                    </button>
+                  </Link>
                 </div>
               </div>
               <div>

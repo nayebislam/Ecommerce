@@ -74,9 +74,11 @@ const ProductsRightPart = () => {
             <div className="relative group ease-in-out duration-200 bg-products rounded py-[52px] px-[65px]">
               <img src={product.thumbnail} alt="" />
               <div className="absolute left-0 bottom-0 w-full opacity-0 group-hover:opacity-[100%] ease-in-out duration-200">
-                <button className="w-full font-primary font-medium text-[16px] leading-6 text-white bg-black py-2 rounded-b cursor-pointer">
-                  Add To Cart
-                </button>
+                <Link to="/cart">
+                  <button className="w-full font-primary font-medium text-[16px] leading-6 text-white bg-black py-2 rounded-b cursor-pointer">
+                    Add To Cart
+                  </button>
+                </Link>
               </div>
             </div>
             <div>
