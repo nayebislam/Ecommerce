@@ -53,7 +53,9 @@ const ProductsRightPart = () => {
     <div className="w-[80%]">
       <div className="flex items-center mt-[172px] gap-x-3 justify-end">
         <p className="font-primary text-[16px] leading-6 text-black">Show :</p>
-        <p className="py-[2px] px-[42px] border border-[#D9D9D9] rounded">{currentProduct.length}</p>
+        <p className="py-[2px] px-[42px] border border-[#D9D9D9] rounded">
+          {currentProduct.length}
+        </p>
       </div>
       <div className="flex flex-wrap gap-x-[30px] gap-y-[40px] justify-end mt-[30px]">
         {currentProduct.map((product) => (
@@ -118,6 +120,18 @@ const ProductsRightPart = () => {
           >
             {item}
           </div>
+          //  <button className='font-primary font-bold px-4'
+          //       onClick={()=>setCurrentPage(prev => Math.max(prev-1 ,1))}
+          //       disabled ={currentPage === 1}
+          //       >
+          //        Prev
+          //       </button>
+          //      <button className='font-primary font-bold px-4'
+          //      onClick={()=>setCurrentPage(prev=> Math.min(prev+1 , data.length))}
+          //      disabled={currentPage === data.length}
+          //      >
+          //       Next
+          //      </button>
         ))}
       </div>
     </div>
