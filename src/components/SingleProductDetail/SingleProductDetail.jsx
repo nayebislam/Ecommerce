@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import SingleProductRating from "./SingleProductRating";
 import { FiEye, FiPlus } from "react-icons/fi";
 import { LuMinus } from "react-icons/lu";
@@ -17,6 +17,16 @@ const SingleProductDetail = () => {
   const [clicked1, setClicked1] = useState(false);
   const [clicked2, setClicked2] = useState(false);
   const [visible, setVisible] = useState(4);
+  const [selectedImg, setSelectedImg] = useState();
+  const [count, setCount] = useState(0);
+  const Increase = () => {
+    setCount(count + 1);
+  };
+  const Decrease = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
 
   const handleClick1 = () => {
     setClicked1(true);
@@ -26,6 +36,12 @@ const SingleProductDetail = () => {
     setClicked1(false);
     setClicked2(true);
   };
+
+  useEffect(() => {
+    if (singleProduct?.thumbnail) {
+      setSelectedImg(singleProduct?.thumbnail);
+    }
+  }, [singleProduct]);
 
   useEffect(() => {
     fetch("https://dummyjson.com/products")
@@ -46,7 +62,7 @@ const SingleProductDetail = () => {
       <div className="grid grid-cols-12">
         <div className="col-span-2">
           <div className="flex flex-col gap-y-3 mr-[30px]">
-            <div className="py-[16px] px-6 bg-[#F5F5F5] rounded flex justify-center items-center">
+            {/* <div className="py-[16px] px-6 bg-[#F5F5F5] rounded flex justify-center items-center">
               <img src={singleProduct?.images[0]} alt="" />
             </div>
             <div className="py-[16px] px-6 bg-[#F5F5F5] rounded flex justify-center items-center">
@@ -57,12 +73,17 @@ const SingleProductDetail = () => {
             </div>
             <div className="py-[16px] px-6 bg-[#F5F5F5] rounded flex justify-center items-center">
               <img src={singleProduct?.images[0]} alt="" />
-            </div>
+            </div> */}
+            {singleProduct?.images.map((img) => (
+              <div className="py-[16px] px-6 bg-[#F5F5F5] rounded flex justify-center items-center cursor-pointer">
+                <img onClick={() => setSelectedImg(img)} src={img} alt="" />
+              </div>
+            ))}
           </div>
         </div>
         <div className="col-span-6 mr-[70px]">
           <div className="pt-[160px] pb-[173px] px-[27px] bg-[#F5F5F5] rounded flex items-center justify-center">
-            <img src={singleProduct?.thumbnail} alt="" />
+            <img className="w-[300px]" src={selectedImg} alt="" />
           </div>
         </div>
         <div className="col-span-4">
@@ -125,7 +146,10 @@ const SingleProductDetail = () => {
           </div>
           <div className="flex mt-6 items-center">
             <div className="flex border rounded border-[#00000080] overflow-hidden">
-              <div className="flex items-center py-[10px] px-2 group hover:bg-primary ease-in-out duration-100 cursor-pointer">
+              <div
+                className="flex items-center py-[10px] px-2 group hover:bg-primary ease-in-out duration-100 cursor-pointer"
+                onClick={Decrease}
+              >
                 <LuMinus
                   size={16}
                   className="group-hover:text-white ease-in-out duration-100"
@@ -133,10 +157,13 @@ const SingleProductDetail = () => {
               </div>
               <div className="flex items-center py-2 px-8.5 relative after:absolute after:content-[''] after:h-full after:w-[1px] after:bg-[#00000080] after:left-0 after:top-0 before:absolute before:content-[''] before:h-full before:w-[1px] before:bg-[#00000080] before:right-0 before:top-0">
                 <p className="font-primary font-medium text-[20px] leading-7 text-black">
-                  1
+                  {count}
                 </p>
               </div>
-              <div className="py-[10px] px-2 flex items-center group hover:bg-primary ease-in-out duration-100 cursor-pointer">
+              <div
+                className="py-[10px] px-2 flex items-center group hover:bg-primary ease-in-out duration-100 cursor-pointer"
+                onClick={Increase}
+              >
                 <FiPlus
                   size={16}
                   className="group-hover:text-white ease-in-out duration-100"
@@ -188,7 +215,7 @@ const SingleProductDetail = () => {
         </div>
         <div className="flex flex-wrap gap-x-[30px] gap-y-[40px] justify-end mt-[30px]">
           {productData.slice(0, visible).map((product) => (
-            <div className="relative w-[270px]">
+            <Link to={`/product/${product.id}`} className="relative w-[270px]">
               <div className="absolute top-3 right-3 z-10">
                 <div className="h-[34px] w-[34px] rounded-full bg-white flex justify-center items-center cursor-pointer">
                   <FaRegHeart size={16} color="black" />
@@ -234,7 +261,7 @@ const SingleProductDetail = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
