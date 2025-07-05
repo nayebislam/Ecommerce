@@ -93,6 +93,21 @@ const CartPage = () => {
           Update Cart
         </button>
       </div>
+      <div className="flex justify-between pb-[140px]">
+        <div className="flex items-center gap-x-4">
+          <input
+            className="py-4 pl-6 pr-[164px] placeholder:font-primary placeholder:text-[16px] placeholder:leading-[24px] text-black outline-none border border-black rounded"
+            type="text"
+            placeholder="Coupon Code"
+          />
+          <button className="py-4 px-12 rounded bg-primary font-primary font-medium text-[16px] leading-[24px] text-white">
+            Update Cart
+          </button>
+        </div>
+        <div>
+          <button className="py-4 px-8 bg-primary text-white rounded">saehdfi</button>
+        </div>
+      </div>
     </div>
   );
 };
