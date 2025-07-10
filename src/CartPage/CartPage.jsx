@@ -109,6 +109,8 @@ const CartPage = () => {
           <button className="py-4 px-8 bg-primary text-white rounded">saehdfi</button>
           <button className="py-4 px-8 bg-primary text-white rounded">saehdfi</button>
           <button className="py-4 px-8 bg-primary text-white rounded">saehdfi</button>
+          <button className="py-4 px-8 bg-primary text-white rounded">saehdfi</button>
+          <button className="py-4 px-8 bg-primary text-white rounded">saehdfi</button>
         </div>
       </div>
     </div>
