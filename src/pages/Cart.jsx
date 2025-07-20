@@ -1,6 +1,6 @@
 import React from 'react'
 import Containar from "../layout/Containar"
-import CartPage from '../CartPage/CartPage';
+import CartPage from '../components/CartPage/CartPage';
 
 const Cart = () => {
   return (

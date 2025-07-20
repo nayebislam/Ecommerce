@@ -1,5 +1,5 @@
 import React from "react";
-import p4 from "../assets/p4.png";
+import p4 from "../../assets/p4.png";
 import { IoChevronUpSharp } from "react-icons/io5";
 import { IoChevronDownSharp } from "react-icons/io5";
 
@@ -101,7 +101,7 @@ const CartPage = () => {
             placeholder="Coupon Code"
           />
           <button className="py-4 px-12 rounded bg-primary font-primary font-medium text-[16px] leading-[24px] text-white">
-            Update Cart
+            Update Coupon
           </button>
         </div>
         <div>

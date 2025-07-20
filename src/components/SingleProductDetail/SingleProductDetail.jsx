@@ -9,6 +9,8 @@ import { TbTruckReturn } from "react-icons/tb";
 import MainHeading from "../../layout/MainHeading";
 import { FaRegHeart } from "react-icons/fa6";
 import ProductRating from "../ProductsPage/ProductRating";
+import { cartTotal } from "../../slices/cartSlice";
+import { useDispatch } from "react-redux";
 
 const SingleProductDetail = () => {
   const { id } = useParams();
@@ -19,6 +21,7 @@ const SingleProductDetail = () => {
   const [visible, setVisible] = useState(4);
   const [selectedImg, setSelectedImg] = useState();
   const [count, setCount] = useState(0);
+  const dispatch = useDispatch()
   const Increase = () => {
     setCount(count + 1);
   };
@@ -49,6 +52,10 @@ const SingleProductDetail = () => {
       .then((data) => setProductData(data.products));
   }, []);
 
+  const handleBuyNow = (product) => {
+    dispatch(cartTotal(product))
+    
+  }
   return (
     <div className="pb-[140px]">
       <div className="py-[80px]">
@@ -172,7 +179,7 @@ const SingleProductDetail = () => {
             </div>
             <div className="ml-4 mr-[19px]">
               <Link to="/cart">
-                <button className="py-2.5 px-12 bg-primary text-white font-primary font-medium text-[16px] cursor-pointer leading-6 rounded">
+                <button onClick={()=>handleBuyNow(singleProduct)} className="py-2.5 px-12 bg-primary text-white font-primary font-medium text-[16px] cursor-pointer leading-6 rounded">
                   Buy Now
                 </button>
               </Link>
