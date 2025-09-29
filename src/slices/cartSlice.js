@@ -11,13 +11,27 @@ export const cartSlice = createSlice({
             if (findIndex >= 0) {
                 state.cartItems[findIndex].cartQun += 1
             } else {
-                state.cartItems.push({...action.payload, cartQun: 1})
+                state.cartItems.push({ ...action.payload, cartQun: 1 })
             }
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
-        }
+        },
+        cartQuntity: (state, action) => {
+            if (action.payload.type === "increment") {
+                state.cartItems[action.payload.id].cartQun += 1;
+            } else if (action.payload.type === "decrement") {
+                if (state.cartItems[action.payload.id].cartQun > 0) {
+                    state.cartItems[action.payload.id].cartQun -= 1;
+                }
+            }
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+        },
+        removeFromCart: (state, action) => {
+            state.cartItems = state.cartItems.filter((item) => item.id !== action.payload.id);
+            localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+        },
     }
 })
 
-export const { cartTotal } = cartSlice.actions
+export const { cartTotal, cartQuntity, removeFromCart } = cartSlice.actions
 
 export default cartSlice.reducer
