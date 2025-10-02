@@ -11,6 +11,7 @@ import { FaRegHeart } from "react-icons/fa6";
 import ProductRating from "../ProductsPage/ProductRating";
 import { cartTotal } from "../../slices/cartSlice";
 import { useDispatch } from "react-redux";
+import { Bounce, ToastContainer, toast } from 'react-toastify';
 
 const SingleProductDetail = () => {
   const { id } = useParams();
@@ -53,8 +54,8 @@ const SingleProductDetail = () => {
   }, []);
 
   const handleBuyNow = (product) => {
-    dispatch(cartTotal(product))
-    
+    dispatch(cartTotal(product));
+    toast("add to cart")
   }
   return (
     <div className="pb-[140px]">
@@ -178,8 +179,21 @@ const SingleProductDetail = () => {
               </div>
             </div>
             <div className="ml-4 mr-[19px]">
+              <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Bounce}
+              />
               <Link to="/cart">
-                <button onClick={()=>handleBuyNow(singleProduct)} className="py-2.5 px-12 bg-primary text-white font-primary font-medium text-[16px] cursor-pointer leading-6 rounded">
+                <button onClick={() => handleBuyNow(singleProduct)} className="py-2.5 px-12 bg-primary text-white font-primary font-medium text-[16px] cursor-pointer leading-6 rounded">
                   Buy Now
                 </button>
               </Link>

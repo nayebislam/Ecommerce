@@ -53,7 +53,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to=""
+                  to="/registration"
                   className="font-primary text-base leading-[24px] text-black"
                 >
                   Sign Up

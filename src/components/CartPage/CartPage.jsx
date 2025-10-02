@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import Containar from "../../layout/Containar";
 import { cartQuntity, removeFromCart } from "../../slices/cartSlice";
 import { useState } from "react";
+import { Link } from "react-router";
 
 const CartPage = () => {
   const dispatch = useDispatch();
   const [couponText, setcouponText] = useState("")
+  const [discount, setDiscount] = useState(0)
   const data = useSelector(state => state.cartDetails.cartItems)
   const totalPrice = data.reduce((prev, current) => {
     return prev + current.price * current.cartQun;
@@ -22,8 +24,13 @@ const CartPage = () => {
     dispatch(removeFromCart({id: id}))
   }
   const handelChange = (e) => {
-    console.log(e);
-    
+    setcouponText(e.target.value);
+  }
+
+  const handleApplyCoupon = () => {
+    if (couponText == "nayeb") {
+      setDiscount(totalPrice * 0.2)
+    }
   }
   return (
     <div>
@@ -66,7 +73,7 @@ const CartPage = () => {
                     ${product.price}
                   </div>
                   <div className="w-[25%] text-center">
-                    <div className="py-2.5 px-3 border border-[#999999] rounded inline-block">
+                    <div className="w-[76px] h-[52px] py-2.5 px-3 border border-[#999999] rounded inline-block">
                       <div className="flex items-center gap-x-4">
                         <p className="font-primary text-[16px] leading-[24px] text-black">
                           {product.cartQun}
@@ -95,9 +102,9 @@ const CartPage = () => {
             }
           </div>
           <div className="flex items-center justify-between mb-[80px]">
-            <button className="py-4 px-12 rounded border border-[#808080] font-primary font-medium text-[16px] leading-[24px] text-black">
+            <Link to='/products' className="py-4 px-12 rounded border border-[#808080] font-primary font-medium text-[16px] leading-[24px] text-black">
               Return To Shop
-            </button>
+            </Link>
             <button className="py-4 px-12 rounded border border-[#808080] font-primary font-medium text-[16px] leading-[24px] text-black">
               Update Cart
             </button>
@@ -111,7 +118,7 @@ const CartPage = () => {
                 type="text"
                 placeholder="Coupon Code"
               />
-              <button className="py-[17px] px-12 rounded bg-primary font-primary font-medium text-[16px] leading-[24px] text-white">
+              <button onClick={handleApplyCoupon} className="py-[17px] px-12 rounded bg-primary font-primary font-medium text-[16px] leading-[24px] text-white">
                 Apply Coupon
               </button>
             </div>
@@ -122,12 +129,12 @@ const CartPage = () => {
                 <p>${totalPrice}</p>
               </div>
               <div className="flex font-primary text-[16px] leading-6 justify-between mt-6 pb-4 border-b border-[#00000080]">
-                <p>Shipping:</p>
-                <p>$960</p>
+                <p>Disccount:</p>
+                <p>{discount}</p>
               </div>
               <div className="flex font-primary text-[16px] leading-6 justify-between mt-6">
                 <p>Total:</p>
-                <p>$960</p>
+                <p>{totalPrice - discount}</p>
               </div>
               <div className="mt-[32px] flex justify-center">
                 <button className="py-4 px-12 rounded bg-primary font-primary font-medium text-[16px] leading-[24px] text-white">
